@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wojciech Królak-Kurkus</title>
+    <script>
+        function randomowe(){
+            return Math.round((Math.random())*100);
+        }
+        function fibonacci(range){
+            var iteracja = 0;
+            var obecny = 1;
+            var roboczy = 1;
+            var poprzedni = 1;
+            var numery = [];
+            for (iteracja = 0; iteracja <= range; iteracja++){
+                numery.range = obecny;
+                roboczy = poprzedni;
+                poprzedni = obecny;
+                obecny += roboczy;
+            }
+            document.getElementById("fibonacci-output").innerHTML = numery;
+        }
+        function fib(n){
+            
+        }
+    </script>
+</head>
+<body>
+    <table style="border: black 1px solid;">
+        <th><td colspan="6"> <h1 style="font-size: 2cm;">Królak-Kurkus</h1></td></th>
+        <tr>
+            <td><button onclick="alert('bajo jajo')">bajo jajo</button></td>
+            <td><button onclick="alert(randomowe())">randomowy numer</button></td>
+            <td><button onclick="fibonacci(6)">idk</button></td>
+            <td><button>idk</button></td>
+            <td><button>idk</button></td>
+            <td><button>idk</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <p id="fibonacci-output"></p>
+</body>
+</html>
