@@ -24,7 +24,15 @@
             document.getElementById("fibonacci-output").innerHTML = numery;
         }
         function fib(n){
-            
+            if(n==0){
+                return(0);
+            }
+            else if(n==1){
+                return(1);
+            }
+            else{
+                return(fib(n+1)+fib(n+2));
+            }
         }
     </script>
 </head>
@@ -34,7 +42,7 @@
         <tr>
             <td><button onclick="alert('bajo jajo')">bajo jajo</button></td>
             <td><button onclick="alert(randomowe())">randomowy numer</button></td>
-            <td><button onclick="fibonacci(6)">idk</button></td>
+            <td><button onclick="alert(fib(2))">idk</button></td>
             <td><button>idk</button></td>
             <td><button>idk</button></td>
             <td><button>idk</button></td>
