@@ -9,20 +9,7 @@
         function randomowe(){
             return Math.round((Math.random())*100);
         }
-        function fibonacci(range){
-            var iteracja = 0;
-            var obecny = 1;
-            var roboczy = 1;
-            var poprzedni = 1;
-            var numery = [];
-            for (iteracja = 0; iteracja <= range; iteracja++){
-                numery.range = obecny;
-                roboczy = poprzedni;
-                poprzedni = obecny;
-                obecny += roboczy;
-            }
-            document.getElementById("fibonacci-output").innerHTML = numery;
-        }
+        
         function fib(n){
             if(n==0){
                 return(0);
@@ -34,6 +21,7 @@
                 return(fib(n+1)+fib(n+2));
             }
         }
+
     </script>
 </head>
 <body>
