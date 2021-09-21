@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        var n0 = parseFloat(prompt("Podaj początkową ilość atomów pierwiastka"));
+        var t12 = parseFloat(prompt("Podaj czas rozpadu połowicznego pierwiastka [lata]"));
+        var t = parseFloat(prompt("Podaj czas rozpadu [lata]"));
+        var lambda = (Math.LN2)/(t12);
+        var n = n0 * (Math.E)^(-lambda * t);
+        var nNew = n0 * Math.pow(Math.E, -lambda * t);
+        document.write("N <sub>0</sub> = " + n0 + " [atomów]");
+        document.write("t = " + t + " [lat]");
+        document.write("t1/2 = " + t12 + " [lat]");
+        document.write("λ = " + lambda + " [1/rok]");
+        document.write("N = " + n + " [atomów]");
+        document.write("N = " + nNew + " [atomów]");//aha
+        
+    </script>
+</body>
+</html>

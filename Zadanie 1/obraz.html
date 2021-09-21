@@ -1,0 +1,54 @@
+<html> 
+
+     <head> 
+
+           <script type="text/javascript"> 
+
+                 function okno_zamknij_krolak()  
+
+                       { 
+
+                             window.close() 
+
+                       } 
+
+            </script> 
+
+     </head> 
+
+<body> 
+
+       JS powstał w połowie lat 90. Jest to język skryptowy. Skryptowy, bo się go w zasadzie nie kompiluje. Wykonywany jest bezpośrednio w przeglądarce, czyli po stronie klienta. JS jest bezpieczny, bo tak został zaprojektowany i ciągle jest rozwijany i patchowany. JS jest obiektowy
+       <br>
+       <br>
+       &ltinput type="button" name="przycisk" value="Nowa Strona" onclick="WinOpen(' ')"&gt
+       <br>
+       Ten przycisk wywołuje funkcję WinOpen. Funkcja WinOpen na tej podstronie jest jest zdefiniowana, więc przycisk nic nie zrobi.
+<br>
+<br>
+window.open("obraz.html","okienko","toolbar=no,directories=no,menubar=no,height=280,width=160,top=200,left=200"); 
+<br>
+<pre>
+    Ta linijka kodu otwiera nowe okno.
+
+    toolbar=no -> pasek narzędzi przeglądarki nie jest wyświetlany.
+    directories=no -> pasek ścieżek przeglądarki jest ukryty.
+    menubar=no -> nie jest wyświetlane menu przeglądarki
+    height=280 -> wysokość okienka to 280 pikseli
+    width=160 -> szerokość okienka to 160 pikseli
+    top=200 -> margines górny to 200 pikseli
+    left=200 -> margines z lewej strony to 200 pikseli
+</pre>
+<br>
+<br>
+window.close() 
+<br>
+Zamyka okno przeglądarki
+<br>
+      <img src="obraz1.gif" />	 
+
+      <input type="button" value="zamknij okno" onclick="okno_zamknij_krolak()"/> 
+
+</body> 
+
+</html> 
