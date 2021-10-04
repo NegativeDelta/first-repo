@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        var x1_kro = parseInt(prompt("Podaj x1"));
+        var x2_kro = parseInt(prompt("Podaj x2"));
+        document.write("x<sub>1</sub> = " + x1_kro + "<br>x<sub>2</sub> = " + x2_kro);
+        function obliczY(liczbaLiter){
+            var y = 3 * Math.pow(x1_kro , (liczbaLiter/liczbaLiter+2));
+            document.write("y = " + y);
+        }
+        function obliczY1(){
+            var y1 = 2 * (Math.cos((x1_kro*Math.PI/180)) + Math.sin((x1_kro*Math.PI/180)));
+            document.write("y<sub>1</sub> = " + y1);
+        }
+        function obliczY3(){
+            var y3 = (Math.pow(Math.pow(x1_kro,5)+(2*(Math.pow(x2_kro,4))),1/3)*Math.abs(x1_kro - x2_kro));
+            document.write("y<sub>3</sub> = " + y3);
+        }
+    </script>
+    <br>
+    <input type="button" onClick="obliczY(8)" value="Oblicz potęgę">
+    <input type="button" onClick="obliczY1()" value="Oblicz trygonometrię">
+    <input type="button" onClick="obliczY3()" value="Oblicz te skomplikowane coś">
+</body>
+</html>

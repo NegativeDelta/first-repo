@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ułamki egipskie</title>
+</head>
+<body>
+    <div>
+        <script>
+            var m_kro = parseInt(prompt("Podaj mianownik ułamka egipskiego"));
+            function rozkladNaTrzy(m){
+                var x = m + 1;
+
+                document.write("<br>1/"+ m + " = 1/"+ x + " + 1/" + ((m * x) + 1) + " + 1/" + m * x * (m * x + 1));
+            }
+            function rozkladNaDwa(m){
+                document.write("<br>1/"+ m + " = 1/" + m * 2 + " + 1/" + m * 2);
+            }
+            rozkladNaDwa(m_kro);
+            rozkladNaTrzy(m_kro);
+        </script>
+    </div>
+</body>
+</html>

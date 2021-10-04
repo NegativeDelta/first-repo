@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyprowadzanie danych</title>
+    <script>
+        function albert(){
+            alert("To jest alert");
+        }
+        function formularz(){
+            document.getElementById("textbox").value = "hmm";
+        }
+        function tabelka(){
+            document.getElementById("cell").innerHTML = "world";
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="document.write()" onclick="document.write('użyłeś document.write()')">
+    <input type="button" value="alert()" onclick="albert()">
+    <input type="button" value="okienko formularza" onclick="formularz()">
+    <input type="button" value="do tabeli" onclick="tabelka()">
+    <br>
+    <input type="text" id="textbox">
+    <table border="1">
+        <tr>
+            <td>hello</td>
+            <td id="cell"></td>
+        </tr>
+    </table>
+    <p>
+        getElementsByName to funkcja "wyłapująca" wszystkie elementy z określoną nazwą i zapisująca ją w liście typu nodeList
+    </p>
+    <p>
+        funkcje to fragmenty kodu, które się definiuje gdy ma się zamiar ich użyć przynajmniej kilka razy w kodzie. mogą przyjmować argumenty, czyli takie jakby wewnętrzne zmienne funkcji.
+    </p>
+</body>

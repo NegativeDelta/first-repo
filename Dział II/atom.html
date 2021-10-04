@@ -13,13 +13,13 @@
         var t12 = parseFloat(prompt("Podaj czas rozpadu połowicznego pierwiastka [lata]"));
         var t = parseFloat(prompt("Podaj czas rozpadu [lata]"));
         var lambda = (Math.LN2)/(t12);
-        var n = n0 * (Math.E)**(-lambda * t);
+        var n = n0 * (Math.E)^(-lambda * t);
         var nNew = n0 * Math.pow(Math.E, -lambda * t);
         document.write("N <sub>0</sub> = " + n0 + " [atomów] <br>");
         document.write("t = " + t + " [lat] <br>");
         document.write("t1/2 = " + t12 + " [lat] <br>");
         document.write("λ = " + lambda + " [1/rok] <br>");
-        //document.write("N = " + n + " [atomów] <br>");
+        document.write("N = " + n + " [atomów] <br>");
         document.write("N = " + nNew + " [atomów] <br>");//aha
         
     </script>

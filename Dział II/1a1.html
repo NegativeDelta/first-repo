@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ile sekund</title>
+    
+</head>
+<body>
+    <div style="color: green; font-size: 49px;">
+        <script>
+            var sekundy = 0;
+            var D1_kro = parseInt(prompt("Podaj dzień późniejszy:"));
+            var D2_kro = parseInt(prompt("Podaj dzień wcześniejszy:"));
+            var G1_kro = parseInt(prompt("Godzina dnia późniejszego:"));
+            var G2_kro = parseInt(prompt("Godzina dnia wcześniejszego:"));
+            //Po co treść zadania tak to komplikuje?
+            if(D1_kro > D2_kro){
+                if(D1_kro - D2_kro  >= 2){
+                    var iloscPelnychDni = D1_kro - D2_kro - 1;
+                sekundy += iloscPelnychDni * 24 * 60 * 60;
+                }
+                
+                sekundy += G1_kro * 60 * 60;
+                sekundy += (24-G2_kro)* 60 * 60;
+            }else if(D1_kro == D2_kro){
+                sekundy = (G2_kro - G1_kro) * 60 * 60;
+            }
+            else{
+                document.write("coś poszło nie tak :");
+            }
+            document.write(sekundy);
+            
+        </script>
+    </div>
+</body>
+</html>
