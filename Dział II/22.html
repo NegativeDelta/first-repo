@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artur i Dawid</title>
+    <script>
+        var odl_kro;
+        var s_kro;
+        var h;
+        var alpha;
+        function AssignVariables(){
+            odl_kro = parseFloat(document.getElementById("in_odl_kro").value);
+            s_kro = parseFloat(document.getElementById("in_s_kro").value);
+        }
+        function Oblicz(){
+            h = Math.sqrt((s_kro ** 2)-(odl_kro ** 2));
+            alpha = Math.atan2(odl_kro, h);
+            document.getElementById("out_h").value = h;
+            document.getElementById("out_alpha").value = 90 - (alpha/Math.PI)*180;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="AssignVariables(); Oblicz(); return false">
+        Odległość między kolegami: <input type="text" id="in_odl_kro"> <br>
+        Przebyta droga samolotu: <input type="text" id="in_s_kro"> <br>
+        <input type="submit">
+    </form>
+    <br>
+    Wysokość samolotu: <input type="text" id="out_h"> <br>
+    Kąt lotu: <input type="text" id="out_alpha">
+</body>
+</html>

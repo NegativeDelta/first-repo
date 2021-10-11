@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="h.png">
+    <br>
+    Obliczanie długości drabiny<br>
+    D = <input type="text" id="d-input">
+    <br>
+    x = <input type="text" id="x-input">
+    <br>
+    <button onclick="Oblicz()">Oblicz</button>
+    <br>
+    drabina = <input type="text" id="drabina-output">
+    <br>
+    alfa [w stopniach] = <input type="text" id="alfa-output">
+    <br>
+    <script>
+        function Oblicz(){
+            var d = parseFloat(document.getElementById("d-input").value);
+            var x = parseFloat(document.getElementById("x-input").value);
+            document.getElementById("drabina-output").value = Math.sqrt(x**2 + d**2);
+            var alfa  = ((Math.atan2(d, x))/Math.PI)*180;
+            document.getElementById("alfa-output").value = alfa;
+        }
+        
+        
+    </script>
+</body>
+</html>

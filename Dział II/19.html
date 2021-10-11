@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pole i obwód prostokąta</title>
+    <script>
+        var a_kro;
+        var b_kro; 
+        function AssignVariables(){
+            a_kro = parseInt(document.getElementById("a_dana_kro").value);
+            b_kro = parseInt(document.getElementById("b_dana_kro").value);
+        }
+        function Pole_krolak(a, b){
+            document.getElementById("wyprowadz_pole_kro").innerHTML = a*b;
+            document.getElementById("pole").value = a*b;
+            //document.getElementById("test").innerHTML = a*b;
+            alert("Pole: " + a*b);
+        }
+        function Obwod_krolak(a, b){
+            document.getElementById("wyprowadz_obwod_kro").innerHTML = 2 * (a + b);
+            document.getElementById("obw").value = 2 * (a + b);
+            alert("Obw: " + 2*(a+b));
+        }
+    </script>
+</head>
+<body>
+    <form name="formularz" action="..." onsubmit="AssignVariables(); Pole_krolak(a_kro, b_kro); Obwod_krolak(a_kro, b_kro);return false">
+        Podaj a:<input type="text" id="a_dana_kro" title="a">
+        <br>
+        Podaj b:<input type="text" id="b_dana_kro" title="b">
+        <br>
+        <input type="submit" value="Oblicz" title="przycisk">
+    </form>
+    <!--<p id="test">h</p>-->
+    <table border="1">
+        <tr>
+            <td id="wyprowadz_pole_kro"></td>
+            <td id="wyprowadz_obwod_kro"></td>
+        </tr>
+    </table>
+    <input type="text" id="pole" title="out_pole">
+    <input type="text" id="obw" title="out_obw">
+</body>
+</html>

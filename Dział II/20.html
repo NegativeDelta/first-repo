@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Obliczanie trapezu</title>
+    <script>
+        var pod1;
+        var pod2;
+        var wys;
+        var pow;
+        var obw;
+        function AssignVariables() {
+            pod1 = parseInt(document.getElementById("input_podstawa_1").value);
+            pod2 = parseInt(document.getElementById("input_podstawa_2").value);
+            wys = parseInt(document.getElementById("input_wysokosc").value);
+        }
+        function Pow_krolak(p1, p2, h) {
+            pow = ((p1 + p2) / 2) * h;
+            document.getElementById("out_pole").innerHTML = pow;
+        }
+        function Obw_krolak(a, b, h) {
+            obw = a + b + (2 * Math.sqrt((Math.pow(h, 2)) + ((Math.abs(b - a) / 2) ** 2)));
+            document.getElementById("out_obw").innerHTML = obw;
+        }
+    </script>
+</head>
+
+<body>
+    <form name="formularz" onsubmit="AssignVariables(); Pow_krolak(pod1, pod2, wys); Obw_krolak(pod1, pod2, wys); return false">
+        Podstawa 1:<input type="text" id="input_podstawa_1" title="Podstawa 1"> <br>
+        Podstawa 2:<input type="text" id="input_podstawa_2" title="Podstawa 2"> <br>
+        Wysokość:<input type="text" id="input_wysokosc" title="Wysokosc"><br>
+        <input type="submit" title="Przeslij" value="Oblicz">
+    </form>
+    <table border="1">
+        <tr>
+            <td>Pole</td>
+            <td>Obwód</td>
+        </tr>
+        <tr>
+            <td id="out_pole"></td>
+            <td id="out_obw"></td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
