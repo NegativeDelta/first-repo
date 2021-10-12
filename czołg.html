@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Czołgi</title>
+    <script>
+        var producent_ = "audi";
+        var model_ = "tak";
+        var kraj_produkcji_ = "niemcy";
+        var rok_produkcji_ = 1938;
+        var naklad_ = 100;
+        var pancerz_ = "idk";
+        function Generuj(producent, model, kraj_produkcji, rok_produkcji, naklad, pancerz){
+         this.producent = producent;
+         this.model = model;
+         this.kraj_produkcji = kraj_produkcji;
+         this.rok_produkcji = rok_produkcji;
+         this.naklad = naklad;
+         this.pancerz = pancerz;
+        }
+        function Wypisz(obiekt){
+            document.write("Rok produkcji: " + obiekt.producent + "<br>Model: " + obiekt.model + "<br>Kraj produkcji: " + obiekt.kraj_produkcji + "<br>Rok produkcji: " + obiekt.rok_produkcji + "<br>Nakład: " + obiekt.naklad + "<br>Grubość pancerza: " + obiekt.pancerz +  "<br>Kot: " + obiekt.pancerz +"<br><br> ");
+        }
+
+        var czolg = new Generuj("BMM", "Aufklärungspanzer ", "III Rzesza", 1945, 70, "8 - 50 mm");
+        //document.write(JSON.stringify(czolg) + "<br><br>");
+        Wypisz(czolg);
+
+        var czolg2 = new Generuj("Daimler-Benz AG", "Kleiner Panzerbefehlswagen", "III Rzesza", 1935, 200, "6 - 19 mm");
+        //document.write(JSON.stringify(czolg2)+ "<br><br>");
+        Wypisz(czolg2);
+
+        var czolg3 = new Generuj("Henschel", "VK 3001 (H)", "III Rzesza", 1941, 4, "20 - 50 mm");
+        //document.write(JSON.stringify(czolg3)+ "<br><br>");
+        Wypisz(czolg3);
+
+        var czolg4 = new Generuj("Porsche", "VK 3001 (P)", "III Rzesza", 1941, 2, "20 - 100 mm");
+        //document.write(JSON.stringify(czolg4)+ "<br><br>");
+        Wypisz(czolg4);
+
+        var czolg5 = new Generuj("Henschel", "VK 3601 (H)", "III Rzesza", 1942, 1, "26 - 100 mm");
+        //document.write(JSON.stringify(czolg5)+ "<br><br>");
+        Wypisz(czolg5);
+
+        czolg.kot = "demon";
+        czolg2.kot = "pirat";
+        czolg3.kot = "filemon";
+        czolg4.kot = "szarusia";
+        czolg5.kot = "stefania";
+        document.write("<br><br><br>");
+        //document.write(JSON.stringify(czolg)+ "<br><br>");
+        //document.write(JSON.stringify(czolg2)+ "<br><br>");
+        //document.write(JSON.stringify(czolg3)+ "<br><br>");
+        //document.write(JSON.stringify(czolg4)+ "<br><br>");
+        //document.write(JSON.stringify(czolg5)+ "<br><br>");
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

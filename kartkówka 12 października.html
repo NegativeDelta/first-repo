@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rzut kostką</title>
+</head>
+<body>
+    <script>
+        //Królak-Kurkus Wojciech 12 października 2021
+        var scianki;
+        var rzuty;
+        var obecny_wynik;
+        function przyjmij_dane(){
+            scianki = parseInt(document.getElementById("in_scianki").value);
+            rzuty = parseInt(document.getElementById("in_rzuty").value);
+            rzucaj(scianki, rzuty);
+        }
+        function rzucaj(ilosc_scianek, ilosc_rzutow){
+            
+            for(var i = 0; i < ilosc_rzutow; i++){
+                obecny_wynik = losuj(1,scianki+1)
+                document.write(obecny_wynik);
+                if (obecny_wynik == ilosc_scianek){
+                    document.write(" 😊");
+                }
+                document.write("<br>");
+            }
+            
+        }
+        function losuj(min, max) { 
+            return Math.floor(Math.random() * (max - min) + min);
+        } 
+  
+    </script>
+    <form onsubmit="przyjmij_dane()">
+        Ilość rutów: <input type="text" id="in_rzuty">
+        <br>
+        Ilość ścian kostki: <input type="text" id="in_scianki">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
