@@ -1,64 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Czołgi</title>
+
+
+</head>
+
+<body>
+    <main>
+        <form onsubmit="WygenerujCzolgZInputu(); return false">
+            <input type="text" id="in_producent" placeholder="Producent Czołgu" required="true"> <br>
+            <input type="text" id="in_model" placeholder="Model czołgu" required="true"><br>
+            <input type="text" id="in_kraj" placeholder="Kraj Procukcji" required="true"><br>
+            <input type="text" id="in_rok" placeholder="Rok produkcji" required="true"><br>
+            <input type="text" id="in_naklad" placeholder="Nakład" required="true"><br>
+            <input type="text" id="in_pancerz" placeholder="Grubość pancerza" required="true"><br>
+            <input type="submit" value="Dodaj czołg"><br><br>
+        </form>
+        <form onsubmit="DodajKota(); return false">
+            <input type="text"  id="in_kot"placeholder="Imię kota" required="true"><br>
+            <input type="submit" value="Dodaj kota do najnowszego czołgu"><br>
+        </form>
+        <br>
+        <input type="button" value="Wypisz jeden czołg" onclick="WypiszCzolgZPrzycisku(); return false">
+        <p id="czolg_out"></p>
+    </main>
+
     <script>
+
         var producent_ = "audi";
         var model_ = "tak";
         var kraj_produkcji_ = "niemcy";
         var rok_produkcji_ = 1938;
         var naklad_ = 100;
         var pancerz_ = "idk";
-        function Generuj(producent, model, kraj_produkcji, rok_produkcji, naklad, pancerz){
-         this.producent = producent;
-         this.model = model;
-         this.kraj_produkcji = kraj_produkcji;
-         this.rok_produkcji = rok_produkcji;
-         this.naklad = naklad;
-         this.pancerz = pancerz;
+        var czolgi = [];
+        var counter = 0;
+
+
+
+        function Generuj(producent, model, kraj_produkcji, rok_produkcji, naklad, pancerz) {
+            this.producent = producent;
+            this.model = model;
+            this.kraj_produkcji = kraj_produkcji;
+            this.rok_produkcji = rok_produkcji;
+            this.naklad = naklad;
+            this.pancerz = pancerz;
         }
-        function Wypisz(obiekt){
-            document.write("Rok produkcji: " + obiekt.producent + "<br>Model: " + obiekt.model + "<br>Kraj produkcji: " + obiekt.kraj_produkcji + "<br>Rok produkcji: " + obiekt.rok_produkcji + "<br>Nakład: " + obiekt.naklad + "<br>Grubość pancerza: " + obiekt.pancerz +  "<br>Kot: " + obiekt.pancerz +"<br><br> ");
+        function Wypisz(obiekt) {
+            czolg_out.innerHTML += "<br>Producent: " + obiekt.producent + "<br>Model: " + obiekt.model + "<br>Kraj produkcji: " + obiekt.kraj_produkcji + "<br>Rok produkcji: " + obiekt.rok_produkcji + "<br>Nakład: " + obiekt.naklad + "<br>Grubość pancerza: " + obiekt.pancerz + "<br>Kot: " + obiekt.kot + "<br><br> ";
         }
+        function WypiszCzolgZPrzycisku() {
+            Wypisz(czolgi[counter]);
+            console.log(counter);
+            counter++;
+            if (counter == czolgi.length) {
+                counter = 0;
+            }
 
-        var czolg = new Generuj("BMM", "Aufklärungspanzer ", "III Rzesza", 1945, 70, "8 - 50 mm");
-        //document.write(JSON.stringify(czolg) + "<br><br>");
-        Wypisz(czolg);
 
-        var czolg2 = new Generuj("Daimler-Benz AG", "Kleiner Panzerbefehlswagen", "III Rzesza", 1935, 200, "6 - 19 mm");
-        //document.write(JSON.stringify(czolg2)+ "<br><br>");
-        Wypisz(czolg2);
+        }
+        function WygenerujCzolgZInputu() {
+            czolgi.push(new Generuj(
+                document.getElementById("in_producent").value,
+                document.getElementById("in_model").value,
+                document.getElementById("in_kraj").value,
+                document.getElementById("in_rok").value,
+                document.getElementById("in_naklad").value,
+                document.getElementById("in_pancerz").value));
+        }
+        function DodajKota(){
+            czolgi[czolgi.length-1].kot = document.getElementById("in_kot").value;
+        }
+        czolgi.push(new Generuj("BMM", "Aufklärungspanzer ", "III Rzesza", 1945, 70, "8 - 50 mm"));
+        czolgi.push(new Generuj("Daimler-Benz AG", "Kleiner Panzerbefehlswagen", "III Rzesza", 1935, 200, "6 - 19 mm"));
+        czolgi.push(new Generuj("Henschel", "VK 3001 (H)", "III Rzesza", 1941, 4, "20 - 50 mm"));
+        czolgi.push(new Generuj("Porsche", "VK 3001 (P)", "III Rzesza", 1941, 2, "20 - 100 mm"));
+        czolgi.push(new Generuj("Henschel", "VK 3601 (H)", "III Rzesza", 1942, 1, "26 - 100 mm"));
 
-        var czolg3 = new Generuj("Henschel", "VK 3001 (H)", "III Rzesza", 1941, 4, "20 - 50 mm");
-        //document.write(JSON.stringify(czolg3)+ "<br><br>");
-        Wypisz(czolg3);
 
-        var czolg4 = new Generuj("Porsche", "VK 3001 (P)", "III Rzesza", 1941, 2, "20 - 100 mm");
-        //document.write(JSON.stringify(czolg4)+ "<br><br>");
-        Wypisz(czolg4);
+        czolgi[0].kot = "Demon";
+        czolgi[1].kot = "Pirat";
+        czolgi[2].kot = "Filemon";
+        czolgi[3].kot = "Szarusia";
+        czolgi[4].kot = "Stefcia";
 
-        var czolg5 = new Generuj("Henschel", "VK 3601 (H)", "III Rzesza", 1942, 1, "26 - 100 mm");
-        //document.write(JSON.stringify(czolg5)+ "<br><br>");
-        Wypisz(czolg5);
 
-        czolg.kot = "demon";
-        czolg2.kot = "pirat";
-        czolg3.kot = "filemon";
-        czolg4.kot = "szarusia";
-        czolg5.kot = "stefania";
-        document.write("<br><br><br>");
+
         //document.write(JSON.stringify(czolg)+ "<br><br>");
         //document.write(JSON.stringify(czolg2)+ "<br><br>");
         //document.write(JSON.stringify(czolg3)+ "<br><br>");
         //document.write(JSON.stringify(czolg4)+ "<br><br>");
         //document.write(JSON.stringify(czolg5)+ "<br><br>");
-    </script>
 
-</head>
-<body>
-    
+
+    </script>
 </body>
+
 </html>
