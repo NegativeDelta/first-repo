@@ -50,12 +50,18 @@
             this.rok_produkcji = rok_produkcji;
             this.naklad = naklad;
             this.pancerz = pancerz;
+            this.wypisz = function(){
+                czolg_out.innerHTML += "<br>Producent: " + this.producent + "<br>Model: " + this.model + "<br>Kraj produkcji: " + this.kraj_produkcji + "<br>Rok produkcji: " + this.rok_produkcji + "<br>Nakład: " + this.naklad + "<br>Grubość pancerza: " + this.pancerz + "<br>Kot: " + this.kot + "<br><br> ";
+            }
+            this.dodajkota = function(in_kot_2){
+                this.kot = in_kot_2;
+            }
         }
-        function Wypisz(obiekt) {
-            czolg_out.innerHTML += "<br>Producent: " + obiekt.producent + "<br>Model: " + obiekt.model + "<br>Kraj produkcji: " + obiekt.kraj_produkcji + "<br>Rok produkcji: " + obiekt.rok_produkcji + "<br>Nakład: " + obiekt.naklad + "<br>Grubość pancerza: " + obiekt.pancerz + "<br>Kot: " + obiekt.kot + "<br><br> ";
-        }
+//        function Wypisz(obiekt) {
+//            czolg_out.innerHTML += "<br>Producent: " + obiekt.producent + "<br>Model: " + obiekt.model + "<br>Kraj produkcji: " + obiekt.kraj_produkcji + "<br>Rok produkcji: " + obiekt.rok_produkcji + "<br>Nakład: " + obiekt.naklad + "<br>Grubość pancerza: " + obiekt.pancerz + "<br>Kot: " + obiekt.kot + "<br><br> ";
+//        }
         function WypiszCzolgZPrzycisku() {
-            Wypisz(czolgi[counter]);
+            czolgi[counter].wypisz();
             console.log(counter);
             counter++;
             if (counter == czolgi.length) {
@@ -73,23 +79,27 @@
                 document.getElementById("in_naklad").value,
                 document.getElementById("in_pancerz").value));
         }
+
         function DodajKota(){
-            czolgi[czolgi.length-1].kot = document.getElementById("in_kot").value;
+            czolgi[czolgi.length-1].dodajkota(document.getElementById("in_kot").value);
         }
+
         czolgi.push(new Generuj("BMM", "Aufklärungspanzer ", "III Rzesza", 1945, 70, "8 - 50 mm"));
-        czolgi.push(new Generuj("Daimler-Benz AG", "Kleiner Panzerbefehlswagen", "III Rzesza", 1935, 200, "6 - 19 mm"));
-        czolgi.push(new Generuj("Henschel", "VK 3001 (H)", "III Rzesza", 1941, 4, "20 - 50 mm"));
-        czolgi.push(new Generuj("Porsche", "VK 3001 (P)", "III Rzesza", 1941, 2, "20 - 100 mm"));
-        czolgi.push(new Generuj("Henschel", "VK 3601 (H)", "III Rzesza", 1942, 1, "26 - 100 mm"));
+        czolgi[0].dodajkota("Demon");
+
+        //czolgi.push(new Generuj("Daimler-Benz AG", "Kleiner Panzerbefehlswagen", "III Rzesza", 1935, 200, "6 - 19 mm"));
+        //czolgi.push(new Generuj("Henschel", "VK 3001 (H)", "III Rzesza", 1941, 4, "20 - 50 mm"));
+        //czolgi.push(new Generuj("Porsche", "VK 3001 (P)", "III Rzesza", 1941, 2, "20 - 100 mm"));
+        //czolgi.push(new Generuj("Henschel", "VK 3601 (H)", "III Rzesza", 1942, 1, "26 - 100 mm"));
 
 
-        czolgi[0].kot = "Demon";
-        czolgi[1].kot = "Pirat";
-        czolgi[2].kot = "Filemon";
-        czolgi[3].kot = "Szarusia";
-        czolgi[4].kot = "Stefcia";
+        
 
 
+        //czolgi[1].kot = "Pirat";
+        //czolgi[2].kot = "Filemon";
+        //czolgi[3].kot = "Szarusia";
+        //czolgi[4].kot = "Stefcia";
 
         //document.write(JSON.stringify(czolg)+ "<br><br>");
         //document.write(JSON.stringify(czolg2)+ "<br><br>");

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Koty - metody</title>
+</head>
+<body>
+    <script>
+        function WygenerujKota(imie, rasa, wiek){
+            this.imie = imie;
+            this.rasa = rasa;
+            this.wiek = wiek;
+            this.wypisz = function(){
+                document.write("Imię: " + this.imie + "<br>Rasa: " + this.rasa + "<br>Wiek: " + this.wiek + "<br><br><br>");
+            }
+        }
+        demon = new WygenerujKota("Demon", "Dachowiec", 12);
+        pirat = new WygenerujKota("Pirat", "Dachowiec", 9);
+        rysiek = new WygenerujKota("Rysiek", "Maine Coon", 5);
+        demon.wypisz();
+        pirat.wypisz();
+        rysiek.wypisz();
+    </script>
+</body>
+</html>

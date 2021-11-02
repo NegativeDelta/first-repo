@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write("Pierwszy sposób <br>");
+        document.write("mam przeglądarkę=  " + navigator.appName);
+        document.write("<br><br>Drugi sposób <br>");
+        if ((navigator.appName == "Firefox") && (parseInt(navigator.appVersion) >= 3)) { document.write("mam przeglądarkę=" + navigator.appName); }
+        else { document.write("Masz niewłaściwą wersję przeglądarki!!!"); }
+        document.write("<br><br><br>");
+        document.write("appName - nazwa przeglądarki <br>appVersion - wersja przeglądarki <br>parseInt() - przekonwertowanie stringa na inta");
+
+    </script>
+</body>
+
+</html>
