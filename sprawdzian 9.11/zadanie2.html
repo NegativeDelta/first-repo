@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function UczenConstructor(){
+            this.firstname = document.getElementById("imie").value;
+            this.lastname = document.getElementById("nazwisko").value;
+            this.klasa = document.getElementById("klasa").value;
+            this.nr = document.getElementById("nrdz").value;
+            
+        }
+        function UtworzUcznia(){
+            uczen = new UczenConstructor();
+            //alert(uczen);
+        }
+        
+        function wyswietl(){
+                alert("Uczeń " + uczen.firstname + " " +uczen.lastname + " chodzi do klasy " + uczen.klasa + " i ma w dzienniku numer " + uczen.nr);
+            }
+    </script>
+</head>
+<body>
+    <form onsubmit="UtworzUcznia(); wyswietl()">
+        <input type="text" placeholder="Imię ucznia" id="imie">
+        <input type="text" placeholder="Nazwisko ucznia" id="nazwisko">
+        <input type="text" placeholder="Klasa" id="klasa">
+        <input type="text" placeholder="Numer w dzienniku" id="nrdz">
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="Pobierz(); Oblicz()">
+        <input type="text" id="0_ocena" placeholder="ocena"><input type="text" id="0_waga" placeholder="waga"><br><br>
+        <input type="text" id="1_ocena" placeholder="ocena"><input type="text" id="1_waga" placeholder="waga"><br><br>
+        <input type="text" id="2_ocena" placeholder="ocena"><input type="text" id="2_waga" placeholder="waga"><br><br>
+        <input type="text" id="3_ocena" placeholder="ocena"><input type="text" id="3_waga" placeholder="waga"><br><br>
+        <input type="text" id="4_ocena" placeholder="ocena"><input type="text" id="4_waga" placeholder="waga"><br><br>
+        <input type="submit">
+    </form>
+    <script>
+        let oceny = [];
+        let wagi = [];
+        let sumaOcen = 0;
+        let sumaWag = 0;
+        function Pobierz(){
+            for(let i = 0; i < 5; i++){
+                oceny[i] = document.getElementById(i + "_ocena").value;
+                wagi[i] = document.getElementById(i + "_waga").value;
+            }
+        }
+        function Oblicz(){
+            for(let i = 0; i < 5; i++){
+                sumaOcen += parseInt(oceny[i]*wagi[i]);
+                sumaWag += parseInt(wagi[i]);
+
+            }
+            alert("Średnia: " + sumaOcen/sumaWag);
+        }
+            
+        
+    </script>
+</body>
+</html>

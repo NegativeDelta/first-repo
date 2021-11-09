@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input type="button" value="fib" name="fib" onclick="oblicz(15)">
+    <script>
+        let a = 1;
+        let b = 1;
+        let last = 1;
+        let temp = 1;
+        function oblicz(iteracje){
+            document.write(1 + "<br>");
+            for (var i = 0; i < iteracje; i++){
+                document.write(last + "<br>");
+                temp = last;
+                last = a + b;
+                a = b;
+                b = last;
+                
+                
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>
