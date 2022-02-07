@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let kotki = [
+            "https://tueuropa.pl/uploads/articles_files/2021/11/05/6e7f9516-1948-d9e8-ca22-00007380aca5.jpg",
+            "https://www.josera.pl/media/wysiwyg/ratgeber_PL/ruja_u_kota/Katze_Rollig_shutterstock_1629718012_Beitragsbild2.jpg",
+            "https://fera.pl/images/companies/1/jak%20odr%C3%B3%C5%BCni%C4%87%20kota%20od%20kotki.jpg?1607517006790",
+            "https://5.allegroimg.com/s512/017363/1d1ab1714bc5aca376b9befb0f85/PODUSZKA-KOTKI-05-MALY-SMUTNY-KOTEK-PSOTEK-JASIEK"
+    ]
+    let i = 0
+        function update(){
+            document.body.innerHTML = '';
+            document.write("Nie mam bladego pojęcia o co chodzi w treści zadania, więc dałem tu zmieniające się kotki <br>")
+            document.write('<img src=' + kotki[i] + '>')
+            if(i < kotki.length-1){
+                i++
+            }
+            else{
+                i = 0
+            }
+            setTimeout("update()",2000);
+        }
+        update()
+        
+    </script>
+</body>
+</html>

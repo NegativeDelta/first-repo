@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Login(login, password) {
+            //document.write(login);
+            //document.write(password);
+            if (login.toLowerCase() == "wojciech" && password.toLowerCase() == "królak-kurkus") {
+                document.write("Access granted")
+            }
+            else {
+                document.write("Access denied")
+            }
+        }
+        
+    </script>
+</head>
+
+<body>
+    <form action="?"
+        onsubmit="Login(document.getElementById('wk-username').value,document.getElementById('wk-password').value); return false">
+        <label for="wk-username">Login</label>
+        <input type="text" name="wk-username" id="wk-username" /><br><br>
+        <label for="wk-password">Hasło</label>
+        <input type="password" name="wk-password" id="wk-password" />
+        <input type="submit" value="OK" />
+    </form>
+</body>
+
+</html>

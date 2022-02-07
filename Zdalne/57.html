@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="border: 1px solid black; width: 400px; display: flex; align-items: center; flex-direction: column;">
+        <h3 id="top">marzec 2022</h5>
+        <h1 id="dzien" style="font-size: 64px">4</h1>
+        <h2>Imieniny nie wiem kogo tam</h2>
+        <em style="margin: 50px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida libero non leo aliquam, in finibus nisi euismod. Integer sollicitudin magna eget pulvinar sodales. Sed ut imperdiet turpis. Donec quis nibh eget metus suscipit convallis in a neque. Nullam commodo gravida interdum. Sed id sapien felis.</em>
+        <h2 id="godzina">godzina</h2>
+    </div>
+    <script>
+        let date = new Date()
+        let month = ""
+        switch (date.getMonth()) {
+                case 0:
+                    month = "styczeń"
+                    break
+                case 1:
+                    month = "luty"
+                    break
+                case 2:
+                    month = "marzec"
+                    break
+                case 3:
+                    month = "kwiecień"
+                    break
+                case 4:
+                    month = "maj"
+                    break
+                case 5:
+                    month = "czerwiec"
+                    break
+                case 6:
+                    month = "lipiec"
+                    break
+                case 7:
+                    month = "sierpień"
+                    break
+                case 8:
+                    month = "wrzesień"
+                    break
+                case 9:
+                    month = "październik"
+                    break
+                case 10:
+                    month = "listopad"
+                    break
+                case 11:
+                    month = "gdudzień"
+                    break
+                default:
+                    month = "err"
+            }
+        document.getElementById("top").innerHTML = month + " " + date.getFullYear()
+        document.getElementById("dzien").innerHTML = date.getDate();
+        document.getElementById("godzina").innerHTML ="Godzina " + date.getHours() + ":" + date.getMinutes()
+    </script>
+</body>
+
+</html>

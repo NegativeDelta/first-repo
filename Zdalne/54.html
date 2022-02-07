@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="out" style="border: 1px solid black; padding: 20px;"></p>
+    <input type="button" value="Dodaj kota" onclick="dodajKota(document.getElementById('catName').value)">
+    <input type="text" id="catName"><br><br>
+    <input type="button" value="Dodaj koty startowe" onclick="initCats()"><br><br>
+    <input type="button" value="Zdubluj wszystkie koty" onclick="double()"><br><br>
+    <input type="button" value="Usuń ostatniego kota" onclick="usunKota()">
+    <script>
+        const kotyStartowe = ["Demon", "Pirat", "Stefcia"]
+        let koty = []
+        const out = document.getElementById("out")
+        function initCats() {
+            koty = koty.concat(kotyStartowe)
+            printArray()
+        }
+        function printArray() {
+            out.innerHTML = "Ilość kotów: "+ koty.length + "<br>"
+            koty.forEach(printElement)
+        }
+        function printElement(element) {
+            out.innerHTML += (element + "<br>")
+        }
+        function dodajKota(imie) {
+            koty.push(imie)
+            printArray()
+        }
+        function usunKota() {
+            koty.pop()
+            printArray()
+        }
+        function double() {
+            koty = koty.concat(koty)
+            initCats()
+        }
+        initCats()
+    </script>
+</body>
+</html>

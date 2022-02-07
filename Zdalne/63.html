@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="in_kolor">
+    <button onclick="GetColor()">Potwierdź</button>
+    <h1 id="out"></h1>
+    <script>
+        function GetColor() {
+            let kolor = document.getElementById("in_kolor").value
+            switch (kolor.toLowerCase()) {
+                case "1":
+                    kolor = "red"
+                    break
+                case "czerwony":
+                    kolor = "red"
+                    break
+                case "2":
+                    kolor = "blue"
+                    break
+                case "niebieski":
+                    kolor = "blue"
+                    break
+                default:
+                    kolor = "[ERROR]"
+                    break
+            }
+            printText(kolor)
+        }
+        function printText(color) {
+            document.getElementById("out").outerHTML = '<h1 id="out" style="color:' + color + ';">I\'m ' + color+ ' </h1>'
+        }
+
+    </script>
+</body>
+
+</html>
